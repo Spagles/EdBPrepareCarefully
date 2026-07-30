@@ -40,7 +40,7 @@ namespace EdB.PrepareCarefully {
                 foreach (var pawn in state.Customizations.TemporaryPawns) {
                     preset.temporaryPawns.Add(new SaveRecordTemporaryPawnV5() {
                         id = pawn.Id,
-                        gender = pawn.Pawn?.gender.ToString()
+                        gender = pawn.Pawn != null ? pawn.Pawn.gender.ToString() : pawn.TemporaryPawn?.Gender.ToString()
                     });
                 }
                 foreach (CustomizedPawn customizedPawn in state.Customizations.AllPawns) {
