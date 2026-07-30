@@ -67,7 +67,7 @@ namespace EdB.PrepareCarefully {
                             if (!idSet.Contains(child.Id)) {
                                 preset.temporaryPawns.Add(new SaveRecordTemporaryPawnV5() {
                                     id = child.Id,
-                                    gender = child.Pawn?.gender.ToString()
+                                    gender = child.Pawn != null ? child.Pawn.gender.ToString() : child.TemporaryPawn?.Gender.ToString()
                                 });
                                 idSet.Add(child.Id);
                             }
